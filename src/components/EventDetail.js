@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams, Link } from 'react-router-dom'; // Import the Link component
-import EventReviews from './EventReviews'; // Import the new component
+import { useParams, Link, useNavigate } from 'react-router-dom';
+import EventReviews from './EventReviews';
 
 function EventDetail() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [event, setEvent] = useState(null);
 
   useEffect(() => {
@@ -18,6 +19,18 @@ function EventDetail() {
         console.error('Error fetching event detail:', error);
       });
   }, [id]);
+
+  const handleDelete = () => {
+    axios
+      .delete(`${process.env.REACT_APP_API_URL}/events/${id}`)
+      .then(() => {
+        console.log('Event deleted successfully');
+        navigate('/events');
+      })
+      .catch((error) => {
+        console.error('Error deleting event:', error);
+      });
+  };
 
   if (!event) {
     return <div>Loading...</div>;
@@ -35,9 +48,14 @@ function EventDetail() {
       <p>User Name: {event.user_name}</p>
 
       <Link to={`/events/${id}/edit`}>Edit</Link>
-      <EventReviews eventId={id} /> {/* Display event reviews */}
+      <button onClick={handleDelete}>Delete</button>
+      <EventReviews eventId={id} />
+
+      {/* Add a link to create a new event */}
+      <Link to="/events/new">Create New Event</Link>
     </div>
   );
 }
 
 export default EventDetail;
+
