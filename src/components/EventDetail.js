@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom'; // Import the Link component
+import EventReviews from './EventReviews'; // Import the new component
 
 function EventDetail() {
   const { id } = useParams();
@@ -19,7 +20,7 @@ function EventDetail() {
   }, [id]);
 
   if (!event) {
-    return <div>Loading...</div>; // Add a loading indicator
+    return <div>Loading...</div>;
   }
 
   return (
@@ -32,6 +33,9 @@ function EventDetail() {
       <p>Comment: {event.comment}</p>
       <p>Favorite: {event.is_favorite ? 'Yes' : 'No'}</p>
       <p>User Name: {event.user_name}</p>
+
+      <Link to={`/events/${id}/edit`}>Edit</Link>
+      <EventReviews eventId={id} /> {/* Display event reviews */}
     </div>
   );
 }
