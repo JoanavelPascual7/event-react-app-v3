@@ -10,9 +10,10 @@ function User({ user }) {
       <td>{user.admin}</td>
       <td>{user.verified}</td>
       <td>
-        <Link to={`/users/${user.id}`}>View</Link>
+      <Link to={`/users/${user.id}`}>View</Link>
       </td>
     </tr>
+    
   );
 }
 

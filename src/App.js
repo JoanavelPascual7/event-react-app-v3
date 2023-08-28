@@ -9,9 +9,11 @@ import Edit from "./pages/Edit";
 import FourOFour from "./pages/FourOFour";
 import NewReviewForm from "./components/NewReviewForm"; 
 import UsersIndex from "./pages/UsersIndex";
+import UsersShow from './pages/UsersShow';
+import UserEdit from './pages/UserEdit'; // Import UserEdit page
+import UserNew from './pages/UserNew'; // Import UserNew page
 
-
-import Footer from "./components/Footer"
+import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
 
 function App() {
@@ -23,6 +25,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/users" element={<UsersIndex />} />
+            <Route path="/users/new" element={<UserNew />} /> {/* New User route */}
+            <Route path="/users/:id" element={<UsersShow />} />
+            <Route path="/users/:id/edit" element={<UserEdit />} /> {/* Edit User route */}
             <Route path="/events" element={<Index />} />
             <Route path="/events/new" element={<New />} />
             <Route path="/events/:id" element={<Show />} />

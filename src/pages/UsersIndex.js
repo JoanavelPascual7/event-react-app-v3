@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import User from "../components/User"; // Import the User component
+import User from "../components/User";
+import { Link } from "react-router-dom";
 
 function UsersIndex() {
   const [users, setUsers] = useState([]);
@@ -30,6 +31,9 @@ function UsersIndex() {
           ))}
         </tbody>
       </table>
+      <td>
+      <Link to="/users/new">Add New User</Link>
+      </td>
     </div>
   );
 }

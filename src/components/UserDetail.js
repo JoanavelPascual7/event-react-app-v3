@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 function UserDetail() {
   const { id } = useParams();
@@ -19,7 +19,7 @@ function UserDetail() {
   }, [id]);
 
   if (!user) {
-    return <div>Loading...</div>; // Add a loading indicator
+    return <div>Loading...</div>; 
   }
 
   return (
@@ -27,8 +27,10 @@ function UserDetail() {
       <h2>User Details</h2>
       <p>ID: {user.id}</p>
       <p>User Name: {user.username}</p>
-      <p>Admin: {user.admin}</p>
-      <p>Verified: {user.verified}</p>
+
+      {/* Add links to UserEdit and UserNew */}
+      <Link to={`/users/${user.id}/edit`}>Edit User</Link>
+      <Link to="/users/new">Add New User</Link>
     </div>
   );
 }
