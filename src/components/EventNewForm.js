@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-export default function EventNewForm() {
+export default function EventNewForm({eventId }) {
   const initialFormData = {
     name: '',
     date: '',
@@ -26,10 +26,11 @@ export default function EventNewForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    // Make a POST request to add a review for the specific eventId
     axios
-      .post(`${process.env.REACT_APP_API_URL}/events`, formData)
+      .post(`${process.env.REACT_APP_API_URL}/events/${eventId}/reviews`, formData)
       .then((response) => {
-        console.log('New Event added:', response.data);
+        console.log('New Review added:', response.data);
         setFormData(initialFormData);
       })
       .catch((error) => {
@@ -85,13 +86,22 @@ export default function EventNewForm() {
           />
           <label htmlFor="is_favorite">Favorite</label>
         </div>
-        <label>User Name:</label>
+        <label>User:</label>
         <input
           type="text"
           name="user_name"
           value={formData.user_name}
           onChange={handleInputChange}
         />
+        <div>
+        <label>Image URL:</label>
+        <input
+          type="text"
+          name="image_url"
+          value={formData.image_url}
+          onChange={handleInputChange}
+        />
+        </div>
         <button type="submit">Add Event</button>
       </form>
     </div>

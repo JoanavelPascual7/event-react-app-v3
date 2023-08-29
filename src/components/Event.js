@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Event({ event }) { 
+function Event({ event }) {
   return (
     <tr className="movie">
       <td>{event.id}</td>
@@ -13,10 +13,14 @@ function Event({ event }) {
       <td>{event.is_favorite}</td>
       <td>{event.user_name}</td>
       <td>
-        <Link to={`/events/${events.id}`}>View</Link>
+        <img src={event.image_url} alt={event.name} style={{ maxWidth: "100px" }} />
+      </td>
+      <td>
+        <Link to={`/events/${event.id}`}>View</Link>
       </td>
     </tr>
   );
 }
 
 export default Event;
+

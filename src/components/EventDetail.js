@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import EventReviews from './EventReviews';
+import EventNewForm from './EventNewForm'; // Import the EventNewForm component
 
 function EventDetail() {
   const { id } = useParams();
@@ -38,7 +39,7 @@ function EventDetail() {
 
   return (
     <div>
-      <h2>Event Details</h2>
+      <h2 className='event-details'>Event Details</h2>
       <p>Name: {event.name}</p>
       <p>Date: {event.date}</p>
       <p>Location: {event.location}</p>
@@ -47,9 +48,17 @@ function EventDetail() {
       <p>Favorite: {event.is_favorite ? 'Yes' : 'No'}</p>
       <p>User Name: {event.user_name}</p>
 
+      {/* Display the image larger */}
+      <img
+        src={event.image_url}
+        alt={event.name}
+        style={{ maxWidth: '100%', height: 'auto', marginBottom: '30px' }}
+      />
+
       <Link to={`/events/${id}/edit`}>Edit</Link>
       <button onClick={handleDelete}>Delete</button>
       <EventReviews eventId={id} />
+
 
       {/* Add a link to create a new event */}
       <Link to="/events/new">Create New Event</Link>
@@ -58,4 +67,3 @@ function EventDetail() {
 }
 
 export default EventDetail;
-

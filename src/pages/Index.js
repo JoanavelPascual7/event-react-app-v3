@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Event from "../components/Events";
+import { Link } from 'react-router-dom';
 
 
 
@@ -24,7 +25,6 @@ function Index() {
       <h1 className='show-title'> List of Events </h1>
       <table>
         <thead>
-          {/* Your table header */}
         </thead>
         <tbody>
           {events.map((event) => (
@@ -32,6 +32,9 @@ function Index() {
           ))}
         </tbody>
       </table>
+      <div>
+      <Link to="/events/new">Create New Event</Link>
+      </div>
     </div>
   );
 }

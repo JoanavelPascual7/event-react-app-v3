@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom'; // Import the Link component
+import { Link } from 'react-router-dom';
 
 function EventReviews({ eventId }) {
   const [reviews, setReviews] = useState([]);
 
-  useEffect(() => {
+  const fetchReviews = () => {
     axios
       .get(`${process.env.REACT_APP_API_URL}/events/${eventId}/reviews`)
       .then((response) => {
@@ -15,7 +15,11 @@ function EventReviews({ eventId }) {
       .catch((error) => {
         console.error('Error fetching event reviews:', error);
       });
-  }, [eventId]);
+  };
+
+  useEffect(() => {
+    fetchReviews();
+  }, [eventId]); // Fetch reviews when eventId changes
 
   return (
     <div>
@@ -44,4 +48,5 @@ function EventReviews({ eventId }) {
 }
 
 export default EventReviews;
+
 

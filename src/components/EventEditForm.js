@@ -1,31 +1,31 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { useParams, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useParams, useNavigate } from "react-router-dom";
 
 function EventEditForm() {
-  const { id } = useParams(); // Get the event ID from the URL
-  const navigate = useNavigate(); // Use for navigation after editing
+  const { id } = useParams();
+  const navigate = useNavigate();
 
   const [event, setEvent] = useState({
-    name: '',
-    date: '',
-    location: '',
-    rating: '',
-    comment: '',
+    name: "",
+    date: "",
+    location: "",
+    rating: "",
+    comment: "",
     is_favorite: false,
-    user_name: '',
+    user_name: "",
+    image_url: "",
   });
 
   useEffect(() => {
-    // Fetch the event details for the specified ID
     axios
       .get(`${process.env.REACT_APP_API_URL}/events/${id}`)
       .then((response) => {
-        console.log('Event Details:', response.data);
+        console.log("Event Details:", response.data);
         setEvent(response.data);
       })
       .catch((error) => {
-        console.error('API Error:', error);
+        console.error("API Error:", error);
       });
   }, [id]);
 
@@ -47,13 +47,11 @@ function EventEditForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Make a PUT request to update the event
     axios
       .put(`${process.env.REACT_APP_API_URL}/events/${id}`, event)
       .then((response) => {
         console.log('Event Updated:', response.data);
-        // Navigate back to the event details page after successful update
-        navigate(`/events/${id}`);
+        navigate('/index');
       })
       .catch((error) => {
         console.error('API Error:', error);
@@ -82,7 +80,6 @@ function EventEditForm() {
             onChange={handleChange}
           />
         </label>
-        {/* ... Other form fields */}
         <label>
           Comment:
           <textarea
@@ -98,6 +95,15 @@ function EventEditForm() {
             name="is_favorite"
             checked={event.is_favorite}
             onChange={handleCheckboxChange}
+          />
+        </label>
+        <label>
+          Image URL:
+          <input
+            type="text"
+            name="image_url"
+            value={event.image_url}
+            onChange={handleChange}
           />
         </label>
         <button type="submit">Update Event</button>
