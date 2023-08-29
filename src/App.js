@@ -12,6 +12,9 @@ import UsersIndex from "./pages/UsersIndex";
 import UsersShow from './pages/UsersShow';
 import UserEdit from './pages/UserEdit'; // Import UserEdit page
 import UserNew from './pages/UserNew'; // Import UserNew page
+import ReviewsIndex from "./pages/ReviewsIndex";
+import ReviewsNew from './pages/ReviewsNew'; // Import ReviewsNew page
+
 
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
@@ -32,7 +35,8 @@ function App() {
             <Route path="/events/new" element={<New />} />
             <Route path="/events/:id" element={<Show />} />
             <Route path="/events/:id/edit" element={<Edit />} />
-            <Route path="/events/:id/reviews/new" element={<NewReviewForm />} />
+            <Route path="/events/:id/reviews/new" element={<ReviewsNew />} />
+            <Route path="/events/:id/reviews" element={<ReviewsIndex />} /> 
             <Route path="*" element={<FourOFour />} />
           </Routes>
         </main>

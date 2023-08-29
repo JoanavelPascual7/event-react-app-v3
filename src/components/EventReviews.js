@@ -19,8 +19,8 @@ function EventReviews({ eventId }) {
 
   useEffect(() => {
     fetchReviews();
-  }, [eventId]); // Fetch reviews when eventId changes
-
+  }, [eventId]);
+  
   return (
     <div>
       <h2>Event Reviews</h2>
@@ -43,6 +43,7 @@ function EventReviews({ eventId }) {
         </tbody>
       </table>
       <Link to={`/events/${eventId}/reviews/new`}>Leave a Review</Link>
+      
     </div>
   );
 }

@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 
 function NewReviewForm() {
-  const { id: eventId } = useParams(); // Get the event ID from the URL
+  const { id } = useParams(); // Get the event ID from the URL
   const navigate = useNavigate(); // Use for navigation after submitting
 
   const [review, setReview] = useState({
@@ -23,13 +23,20 @@ function NewReviewForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log('Submitting review:', review);
+
+    // Convert rating to a number
+    const ratingNumber = parseFloat(review.rating);
+
     // Make a POST request to create the new review
+    const apiUrl = `${process.env.REACT_APP_API_URL}/events/${id}/reviews`;
+
     axios
-      .post(`${process.env.REACT_APP_API_URL}/events/${eventId}/reviews`, review)
+      .post(apiUrl, { ...review, rating: ratingNumber }) // Send converted rating
       .then((response) => {
         console.log('Review Created:', response.data);
         // Navigate back to the event details page after successful creation
-        navigate(`/events/${eventId}`);
+        navigate(`/events/${id}`);
       })
       .catch((error) => {
         console.error('API Error:', error);

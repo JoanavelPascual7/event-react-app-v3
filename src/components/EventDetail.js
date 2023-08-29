@@ -4,7 +4,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import EventReviews from './EventReviews';
 
 function EventDetail() {
-  const { id } = useParams();
+  const { id } = useParams(); 
   const navigate = useNavigate();
   const [event, setEvent] = useState(null);
 
@@ -53,13 +53,26 @@ function EventDetail() {
         alt={event.name}
         style={{ maxWidth: '100%', height: 'auto', marginBottom: '30px' }}
       />
-
+        <div>
       <Link to={`/events/${id}/edit`}>Edit</Link>
+      </div>
+      <div>
       <button onClick={handleDelete}>Delete</button>
-      <EventReviews eventId={id} />
-
+      </div>
+      <div>
+      <Link to={`/events/${id}/reviews`} onClick={() => navigate(`/events/${id}/reviews`)}>
+        Event Reviews
+      </Link>
+      </div>
+      <div>
+      <Link to={`/events/${id}/reviews/new`} onClick={() => navigate(`/events/${id}/reviews`)}>
+        Leave A Review
+      </Link>
+      </div>
+        <div>
       {/* Add a link to create a new event */}
       <Link to="/events/new">Create New Event</Link>
+      </div>
     </div>
   );
 }
