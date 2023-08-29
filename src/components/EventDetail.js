@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import EventReviews from './EventReviews';
-import EventNewForm from './EventNewForm'; // Import the EventNewForm component
 
 function EventDetail() {
   const { id } = useParams();
@@ -58,7 +57,6 @@ function EventDetail() {
       <Link to={`/events/${id}/edit`}>Edit</Link>
       <button onClick={handleDelete}>Delete</button>
       <EventReviews eventId={id} />
-
 
       {/* Add a link to create a new event */}
       <Link to="/events/new">Create New Event</Link>
