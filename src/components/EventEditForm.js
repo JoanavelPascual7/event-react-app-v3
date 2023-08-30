@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 
-
 import './Form.css'
 
 function EventEditForm() {
@@ -54,7 +53,7 @@ function EventEditForm() {
       .put(`${process.env.REACT_APP_API_URL}/events/${id}`, event)
       .then((response) => {
         console.log('Event Updated:', response.data);
-        navigate('/index');
+        navigate(`/events/${id}`); // Redirect to the Show page
       })
       .catch((error) => {
         console.error('API Error:', error);
