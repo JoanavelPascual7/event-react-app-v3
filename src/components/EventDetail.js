@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, Link, useNavigate } from 'react-router-dom';
@@ -31,14 +32,6 @@ function EventDetail() {
       .catch((error) => {
         console.error('Error deleting event:', error);
       });
-  };
-
-  const formatDate = (inputDate) => {
-    const date = new Date(inputDate);
-    const day = String(date.getDate()).padStart(2, '0');
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const year = date.getFullYear();
-    return `${day}/${month}/${year}`;
   };
 
   if (!event) {
