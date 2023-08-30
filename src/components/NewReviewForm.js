@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 
+import './Form.css'
+
 function NewReviewForm() {
   const { id } = useParams(); // Get the event ID from the URL
   const navigate = useNavigate(); // Use for navigation after submitting

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import EventReviews from './EventReviews';
+
+import './EventDetail.css';
 
 function EventDetail() {
   const { id } = useParams(); 
@@ -32,46 +33,77 @@ function EventDetail() {
       });
   };
 
+  const formatDate = (inputDate) => {
+    const date = new Date(inputDate);
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+  };
+
   if (!event) {
     return <div>Loading...</div>;
   }
 
   return (
-    <div>
+    <div className="event-detail-container">
       <h2 className='event-details'>Event Details</h2>
-      <p>Name: {event.name}</p>
-      <p>Date: {event.date}</p>
-      <p>Location: {event.location}</p>
-      <p>Rating: {event.rating}</p>
-      <p>Comment: {event.comment}</p>
-      <p>Favorite: {event.is_favorite ? 'Yes' : 'No'}</p>
-      <p>User Name: {event.user_name}</p>
+      <ul className="event-info">
+        <li>
+          <span className="event-detail-heading">Name:</span>
+          <span className="event-detail">{event.name}</span>
+        </li>
+        <li>
+          <span className="event-detail-heading">Date:</span>
+          <span className="event-detail">{event.date}</span>
+        </li>
+        <li>
+          <span className="event-detail-heading">Location:</span>
+          <span className="event-detail">{event.location}</span>
+        </li>
+        <li>
+          <span className="event-detail-heading">Rating:</span>
+          <span className="event-detail">{event.rating}</span>
+        </li>
+        <li>
+          <span className="event-detail-heading">Comment:</span>
+          <span className="event-detail">{event.comment}</span>
+        </li>
+        <li>
+          <span className="event-detail-heading">Favorite:</span>
+          <span className="event-detail">{event.is_favorite ? 'Yes' : 'No'}</span>
+        </li>
+        <li>
+          <span className="event-detail-heading">User Name:</span>
+          <span className="event-detail">{event.user_name}</span>
+        </li>
+      </ul>
 
-      {/* Display the image larger */}
       <img
         src={event.image_url}
         alt={event.name}
-        style={{ maxWidth: '100%', height: 'auto', marginBottom: '30px' }}
+        className="event-image"
       />
-        <div>
-      <Link to={`/events/${id}/edit`}>Edit</Link>
+      
+      <div className="event-actions">
+        <Link to={`/events/${id}/edit`} className="event-action-link">
+          Edit
+        </Link>
+        <button onClick={handleDelete} className="event-action-button">
+          Delete
+        </button>
       </div>
-      <div>
-      <button onClick={handleDelete}>Delete</button>
-      </div>
-      <div>
-      <Link to={`/events/${id}/reviews`} onClick={() => navigate(`/events/${id}/reviews`)}>
-        Event Reviews
-      </Link>
-      </div>
-      <div>
-      <Link to={`/events/${id}/reviews/new`} onClick={() => navigate(`/events/${id}/reviews`)}>
-        Leave A Review
-      </Link>
-      </div>
-        <div>
-      {/* Add a link to create a new event */}
-      <Link to="/events/new">Create New Event</Link>
+
+      <div className="event-action-links">
+        <Link to={`/events/${id}/reviews`} className="event-action-link">
+          Event Reviews
+        </Link>
+        <Link to={`/events/${id}/reviews/new`} className="event-action-link">
+          Leave A Review
+        </Link>
+        <Link to="/events/new" className="event-action-link">
+          Create New Event
+        </Link>
       </div>
     </div>
   );

@@ -1,5 +1,14 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* 100% of the viewport height */
+  overflow: auto; /* Allow scrolling */
+  margin: 0;
+  background-size: cover;
+  background-position: center;
 }
 
 .App-logo {
@@ -14,14 +23,17 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  position: fixed; /* Make the navbar fixed at the top */
+  top: 0; /* Position it at the top */
+  width: 100%; /* Make it span the entire width */
+  background-color: rgba(0, 0, 0, 0.7); /* Adjust the background color */
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 10px 0; /* Add some padding at the top and bottom */
+  z-index: 1000; /* Ensure it's above other elements */
 }
 
 .App-link {
@@ -35,4 +47,10 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Add padding to the top and bottom of the content area */
+main {
+  flex: 1; /* This ensures the content area takes up remaining space */
+  padding: 60px 0 20px; /* Adjust the padding (top, right, bottom, left) */
 }

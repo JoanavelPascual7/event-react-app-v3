@@ -1,0 +1,52 @@
+.event-container {
+    position: relative;
+    height: 100vh;
+    background-size: 100% 100%;
+    background-position: center;
+    color: white;
+    text-align: center;
+    overflow: hidden !important; /* Prevent scrolling on the home page */
+  }
+  
+  .home-page-header {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px; /* Increase the padding */
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    width: 80%; /* Adjust the width */
+    max-width: 600px; /* Limit the maximum width */
+  }
+  
+  .home-page-title {
+    font-size: 2.5rem;
+    margin-bottom: 15px; /* Increase the margin */
+  }
+  
+  .home-page-description {
+    font-size: 1.2rem;
+    margin-bottom: 30px; /* Increase the margin */
+  }
+  
+  .home-page-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .home-page-link {
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    background-color: #007bff;
+    padding: 12px 24px; /* Increase the padding */
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .home-page-link:hover {
+    background-color: #0056b3;
+  }
+  

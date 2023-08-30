@@ -7,7 +7,6 @@ import New from "./pages/New";
 import Show from "./pages/Show";
 import Edit from "./pages/Edit";
 import FourOFour from "./pages/FourOFour";
-import NewReviewForm from "./components/NewReviewForm"; 
 import UsersIndex from "./pages/UsersIndex";
 import UsersShow from './pages/UsersShow';
 import UserEdit from './pages/UserEdit'; // Import UserEdit page
@@ -24,7 +23,7 @@ function App() {
     <div className="App">
       <Router>
         <NavBar />
-        <main>
+        <main className='main-app-container'>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/users" element={<UsersIndex />} />

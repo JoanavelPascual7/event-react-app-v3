@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
+import './EventReviews.css'
+
 function EventReviews({ eventId }) {
   const [reviews, setReviews] = useState([]);
 
@@ -43,11 +45,8 @@ function EventReviews({ eventId }) {
         </tbody>
       </table>
       <Link to={`/events/${eventId}/reviews/new`}>Leave a Review</Link>
-      
     </div>
   );
 }
 
 export default EventReviews;
-
-
