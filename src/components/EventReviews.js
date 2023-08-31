@@ -25,26 +25,26 @@ function EventReviews({ eventId }) {
   
   return (
     <div>
-      <h2>Event Reviews</h2>
+      <h2 className='event-reviews-title'>Event Reviews</h2>
       <table>
         <thead>
           <tr>
-            <th>Reviewer</th>
-            <th>Content</th>
-            <th>Rating</th>
+            <th className='sub-title-1'>Reviewer</th>
+            <th className='sub-title-2'>Comment</th>
+            <th className='sub-title-3'>Rating</th>
           </tr>
         </thead>
         <tbody>
           {reviews.map((review) => (
             <tr key={review.id}>
-              <td>{review.reviewer}</td>
-              <td>{review.content}</td>
-              <td>{review.rating}</td>
+              <td className='reviewer-name'>{review.reviewer}</td>
+              <td className='reviewer-comment'>{review.content}</td>
+              <td className='reviewer-rating'>{review.rating}</td>
             </tr>
           ))}
         </tbody>
       </table>
-      <Link to={`/events/${eventId}/reviews/new`}>Leave a Review</Link>
+      <Link className='leave-a-review-link' to={`/events/${eventId}/reviews/new`}>Leave a Review</Link>
     </div>
   );
 }
