@@ -30,7 +30,7 @@ function UserDetail() {
       <p className='user-id'>ID: {user.id}</p>
       <p className='user-name'>User Name: {user.username}</p>
 
-      {/* Add links to UserEdit and UserNew */}
+ 
       <Link className='edit-user' to={`/users/${user.id}/edit`}>Edit User</Link>
       <Link className='add-new' to="/users/new">Add New User</Link>
     </div>

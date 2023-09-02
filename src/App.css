@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh; /* 100% of the viewport height */
+  min-height: 100vh;
 
   margin: 0;
   background-size: cover;
@@ -23,17 +23,16 @@
 }
 
 .App-header {
-  position: fixed; /* Make the navbar fixed at the top */
-  top: 0; /* Position it at the top */
-  width: 100%; /* Make it span the entire width */
-
+  position: fixed; 
+  top: 0; 
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  padding: 10px 0; /* Add some padding at the top and bottom */
-  z-index: 1000; /* Ensure it's above other elements */
+  padding: 10px 0; 
+  z-index: 1000; 
 }
 
 .App-link {
@@ -49,8 +48,8 @@
   }
 }
 
-/* Add padding to the top and bottom of the content area */
+
 main {
-  flex: 1; /* This ensures the content area takes up remaining space */
-  padding: 60px 0 20px; /* Adjust the padding (top, right, bottom, left) */
+  flex: 1; 
+  padding: 60px 0 20px; 
 }

@@ -1,17 +1,17 @@
 .event-detail-container {
-    max-width: 600px; /* Adjust the maximum width to your preference */
+    max-width: 600px;
     margin: 0 auto;
-    padding: 20px; /* Reduced padding */
+    padding: 20px; 
     background-color: #f8f8f8;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     font-family: 'Segoe UI', sans-serif;
-    max-height: 80vh; /* Set a maximum height for the container */
-    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 80vh; 
+    overflow-y: auto; 
   }
   
   .event-details {
-    font-size: 1.8rem; /* Slightly smaller title */
+    font-size: 1.8rem; 
     margin-bottom: 20px;
     color: #333;
     text-transform: uppercase;
@@ -25,29 +25,29 @@
   
   .event-info li {
     display: flex;
-    align-items: flex-start; /* Align items at the top */
-    margin-bottom: 15px; /* Reduced margin */
+    align-items: flex-start; 
+    margin-bottom: 15px; 
     color: #555;
   }
   
   .event-detail-heading {
-    font-size: 1.1rem; /* Slightly smaller heading */
+    font-size: 1.1rem; 
     font-weight: bold;
-    width: 120px; /* Reduced width */
-    flex-shrink: 0; /* Prevent the heading from shrinking */
-    margin-right: 10px; /* Add some spacing between the heading and detail */
+    width: 120px; 
+    flex-shrink: 0; 
+    margin-right: 10px; 
   }
   
   .event-detail {
-    font-size: 1rem; /* Slightly smaller text */
-    margin-left: 0; /* Reset the left margin */
-    width: calc(100% - 130px); /* Adjust the width to leave space for the heading */
+    font-size: 1rem; 
+    margin-left: 0; 
+    width: calc(100% - 130px); 
   }
   
   .event-image {
-    max-width: 100%; /* Make the image responsive */
+    max-width: 100%; 
     height: auto;
-    margin-top: 20px; /* Reduced margin */
+    margin-top: 20px; 
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   }
@@ -56,13 +56,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 30px; /* Reduced margin */
+    margin-top: 30px; 
   }
   
   .event-action-link,
   .event-action-button {
     font-size: 1rem;
-    padding: 8px 16px; /* Reduced padding */
+    padding: 8px 16px; 
     border: none;
     cursor: pointer;
     border-radius: 5px;
@@ -93,6 +93,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 15px; /* Reduced margin */
+    margin-top: 15px; 
   }
   

@@ -1,6 +1,5 @@
 import React from "react";
 
-import './Review.css'
 
 function Review({ review }) {
   console.log("Review Component - review:", review); 

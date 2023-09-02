@@ -1,17 +1,22 @@
-/* EventNewForm.css */
-
 .EventNewForm {
     font-family: 'Times New Roman', serif;
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
-    padding: 20px 40px; /* Added more padding to the right */
+    padding: 20px 40px;
     background-color: #f8f8f8;
     border: 1px solid #ddd;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    min-height: 130vh; /* Set minimum height to 100% of viewport height */
-    display: flex; /* Use flexbox to center content vertically */
-    flex-direction: column; /* Stack children vertically */
-    justify-content: center; /* Vertically center children */
+    min-height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    overflow-y: auto; 
+    padding-top: 100px;
+    margin-top: 300px;
+
+    padding-bottom: 100px;
+
   }
   
   .EventNewForm h2 {
@@ -58,3 +63,4 @@
   .EventNewForm .add-event-button:hover {
     background-color: #0056b3;
   }
+  

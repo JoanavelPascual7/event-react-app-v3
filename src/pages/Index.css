@@ -1,13 +1,12 @@
 .index-container {
-
-    overflow-y: scroll; /* Enable vertical scrolling */
-    max-height: 80vh; /* Set a maximum height for the container */
+    overflow-y: scroll; 
+    max-height: 80vh; 
   }
-
-.show-title {
+  
+  .show-title {
     font-size: 28px;
     font-weight: bold;
-    color: #333; 
+    color: #333;
     margin-bottom: 20px;
     text-align: center;
   }
@@ -15,8 +14,8 @@
   .link-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #007bff; 
-    color: #fff; /* Text color */
+    background-color: #007bff;
+    color: #fff; 
     text-decoration: none;
     font-weight: bold;
     border-radius: 4px;
@@ -24,6 +23,17 @@
   }
   
   .link-button:hover {
-    background-color: #0056b3; 
+    background-color: #0056b3;
+  }
+  
+ 
+  @media screen and (max-width: 768px) {
+    .show-title {
+      font-size: 24px; 
+    }
+  
+    .link-button {
+      padding: 8px 16px; 
+    }
   }
   
