@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-import './EventReviews.css'
+import './EventReviews.css';
+import Review from './Review'; // Make sure to import the Review component
 
 function EventReviews({ eventId }) {
   const [reviews, setReviews] = useState([]);
+  const [sortOrder, setSortOrder] = useState('desc'); // Default sorting order
 
   const fetchReviews = () => {
     axios
@@ -22,10 +24,29 @@ function EventReviews({ eventId }) {
   useEffect(() => {
     fetchReviews();
   }, [eventId]);
-  
+
+  // Function to toggle the sorting order
+  const toggleSortOrder = () => {
+    setSortOrder(sortOrder === 'desc' ? 'asc' : 'desc');
+  };
+
+  // Sort the reviews based on the selected sorting order
+  const sortedReviews = [...reviews].sort((a, b) => {
+    if (sortOrder === 'asc') {
+      return a.rating - b.rating;
+    } else {
+      return b.rating - a.rating;
+    }
+  });
+
   return (
     <div>
       <h2 className='event-reviews-title'>Event Reviews</h2>
+      <div className='sort-button'>
+        <button onClick={toggleSortOrder}>
+          {sortOrder === 'asc' ? 'Sort by Highest Rating' : 'Sort by Lowest Rating'}
+        </button>
+      </div>
       <table>
         <thead>
           <tr>
@@ -35,12 +56,8 @@ function EventReviews({ eventId }) {
           </tr>
         </thead>
         <tbody>
-          {reviews.map((review) => (
-            <tr key={review.id}>
-              <td className='reviewer-name'>{review.reviewer}</td>
-              <td className='reviewer-comment'>{review.content}</td>
-              <td className='reviewer-rating'>{review.rating}</td>
-            </tr>
+          {sortedReviews.map((review) => (
+            <Review key={review.id} review={review} />
           ))}
         </tbody>
       </table>

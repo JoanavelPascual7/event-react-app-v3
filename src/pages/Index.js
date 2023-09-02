@@ -4,6 +4,8 @@ import Event from "../components/Events";
 import { Link } from 'react-router-dom';
 
 
+import "./Index.css"
+
 
 function Index() {
   const [events, setEvents] = useState([]);
@@ -33,8 +35,8 @@ function Index() {
         </tbody>
       </table>
       <div>
-      <Link to="/events/new">Create New Event</Link>
-      </div>
+  <Link to="/events/new" className="link-button">Create New Event</Link>
+</div>
     </div>
   );
 }

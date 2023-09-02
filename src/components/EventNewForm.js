@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+
+import "./EventNewForm.css"
+
+
 export default function EventNewForm() {
   const initialFormData = {
     name: '',
@@ -41,35 +45,35 @@ export default function EventNewForm() {
     <div className="EventNewForm">
       <h2>Add New Event</h2>
       <form onSubmit={handleSubmit}>
-        <label>Name:</label>
+        <label className='name'>Name:</label>
         <input
           type="text"
           name="name"
           value={formData.name}
           onChange={handleInputChange}
         />
-        <label>Date:</label>
+        <label className='date'>Date:</label>
         <input
           type="date"
           name="date"
           value={formData.date}
           onChange={handleInputChange}
         />
-        <label>Location:</label>
+        <label className='location'>Location:</label>
         <input
           type="text"
           name="location"
           value={formData.location}
           onChange={handleInputChange}
         />
-        <label>Rating:</label>
+        <label className='rating'>Rating:</label>
         <input
           type="number"
           name="rating"
           value={formData.rating}
           onChange={handleInputChange}
         />
-        <label>Comment:</label>
+        <label className='comment'>Comment:</label>
         <textarea
           name="comment"
           value={formData.comment}
@@ -83,9 +87,9 @@ export default function EventNewForm() {
             checked={formData.is_favorite}
             onChange={handleInputChange}
           />
-          <label htmlFor="is_favorite">Favorite</label>
+          <label className='favorite' htmlFor="is_favorite">Favorite</label>
         </div>
-        <label>User Name:</label>
+        <label className='user-name'>User Name:</label>
         <input
           type="text"
           name="user_name"
@@ -93,7 +97,7 @@ export default function EventNewForm() {
           onChange={handleInputChange}
         />
         <div>
-        <label>Image URL:</label>
+        <label className='image'>Image URL:</label>
         <input
           type="text"
           name="image_url"
@@ -102,7 +106,7 @@ export default function EventNewForm() {
         />
  
         </div>
-        <button type="submit">Add Event</button>
+        <button  className="add-event-button"  type="submit">Add Event</button>
       </form>
     </div>
   );

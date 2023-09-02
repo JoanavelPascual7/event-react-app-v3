@@ -19,15 +19,15 @@ function User({ user, onDelete }) {
 
   return (
     <tr className="user-list-page">
-      <td>{user.id}</td>
-      <td>{user.username}</td>
-      <td>{user.admin}</td>
-      <td>{user.verified}</td>
+      <td className="user-id">{user.id}</td>
+      <td className="user-name">{user.username}</td>
+      <td className="user-admin">{user.admin}</td>
+      <td className="user-verified">{user.verified}</td>
       <td>
-        <Link to={`/users/${user.id}`}>View</Link>
+        <Link className="view-link" to={`/users/${user.id}`}>View</Link>
       </td>
       <td>
-        <button onClick={handleDelete}>Delete</button>
+        <button className="delete-button" onClick={handleDelete}>Delete</button>
       </td>
     </tr>
   );

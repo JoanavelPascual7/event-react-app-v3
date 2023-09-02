@@ -1,10 +1,10 @@
+import React from "react";
 import UserDetails from "../components/UserDetail";
-
+import "./UsersShow.css"; 
 
 function UsersShow() {
   return (
-    <div className="Show">
-      {/* <h2>Show</h2> */}
+    <div className="show-container"> 
       <UserDetails />
     </div>
   );

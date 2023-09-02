@@ -1,0 +1,29 @@
+.index-container {
+
+    overflow-y: scroll; /* Enable vertical scrolling */
+    max-height: 80vh; /* Set a maximum height for the container */
+  }
+
+.show-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333; 
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .link-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; 
+    color: #fff; /* Text color */
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .link-button:hover {
+    background-color: #0056b3; 
+  }
+  

@@ -31,14 +31,15 @@
     color: #e74c3c;
   }
   
-  .event-comment {
+
+.event-comment {
     font-size: 1rem;
     color: #444;
-    max-width: 200px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    max-width: 100%; /* Remove the max-width property */
+    white-space: normal; /* Change to normal to allow line breaks */
+    overflow: visible; /* Change to visible to show the full content */
   }
+  
   
   .event-favorite {
     font-size: 1.1rem;

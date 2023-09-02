@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, Link } from 'react-router-dom'; // Import Link from react-router-dom
 
+import "./UserDetail.css"
+
 function UserDetail() {
   const { id } = useParams();
   const [user, setUser] = useState(null);
@@ -24,13 +26,13 @@ function UserDetail() {
 
   return (
     <div>
-      <h2>User Details</h2>
-      <p>ID: {user.id}</p>
-      <p>User Name: {user.username}</p>
+      <h2 className='title'>User Details</h2>
+      <p className='user-id'>ID: {user.id}</p>
+      <p className='user-name'>User Name: {user.username}</p>
 
       {/* Add links to UserEdit and UserNew */}
-      <Link to={`/users/${user.id}/edit`}>Edit User</Link>
-      <Link to="/users/new">Add New User</Link>
+      <Link className='edit-user' to={`/users/${user.id}/edit`}>Edit User</Link>
+      <Link className='add-new' to="/users/new">Add New User</Link>
     </div>
   );
 }

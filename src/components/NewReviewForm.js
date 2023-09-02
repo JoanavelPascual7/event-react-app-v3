@@ -57,7 +57,7 @@ function NewReviewForm() {
     <div className="new-review-form">
       <h2>Create New Review</h2>
       <form onSubmit={handleSubmit}>
-        <label>
+        <label className="id">
           Event ID:
           <input
             type="text"
@@ -66,7 +66,7 @@ function NewReviewForm() {
             onChange={handleChange}
           />
         </label>
-        <label>
+        <label className="user">
           Reviewer:
           <input
             type="text"
@@ -75,16 +75,8 @@ function NewReviewForm() {
             onChange={handleChange}
           />
         </label>
-        <label>
-          Title:
-          <input
-            type="text"
-            name="title"
-            value={review.title}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
+
+        <label className="comment">
           Content:
           <textarea
             name="content"
@@ -92,7 +84,7 @@ function NewReviewForm() {
             onChange={handleChange}
           />
         </label>
-        <label>
+        <label className="rating">
           Rating:
           <input
             type="number"
@@ -101,7 +93,7 @@ function NewReviewForm() {
             onChange={handleChange}
           />
         </label>
-        <button type="submit">Submit Review</button>
+        <button className="button"  type="submit">Submit Review</button>
       </form>
     </div>
   );

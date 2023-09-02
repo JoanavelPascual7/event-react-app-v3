@@ -64,7 +64,7 @@ function EventEditForm() {
     <div className="event-edit-form">
       <h2>Edit Event</h2>
       <form onSubmit={handleSubmit}>
-        <label>
+        <label className="name">
           Name:
           <input
             type="text"
@@ -73,7 +73,7 @@ function EventEditForm() {
             onChange={handleChange}
           />
         </label>
-        <label>
+        <label className="date">
           Date:
           <input
             type="date"
@@ -82,7 +82,7 @@ function EventEditForm() {
             onChange={handleChange}
           />
         </label>
-        <label>
+        <label className="comment">
           Comment:
           <textarea
             name="comment"
@@ -90,7 +90,7 @@ function EventEditForm() {
             onChange={handleChange}
           />
         </label>
-        <label>
+        <label className="favorite">
           Is Favorite:
           <input
             type="checkbox"
@@ -99,7 +99,7 @@ function EventEditForm() {
             onChange={handleCheckboxChange}
           />
         </label>
-        <label>
+        <label className="image">
           Image URL:
           <input
             type="text"

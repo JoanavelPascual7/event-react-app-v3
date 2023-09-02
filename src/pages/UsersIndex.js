@@ -3,6 +3,8 @@ import axios from 'axios';
 import User from "../components/User";
 import { Link } from "react-router-dom";
 
+import "./UsersIndex.css"
+
 function UsersIndex() {
   const [users, setUsers] = useState([]);
 
@@ -23,7 +25,7 @@ function UsersIndex() {
       <h1 className='show-title'> List of Users </h1>
       <table>
         <thead>
-          {/* Your table header */}
+
         </thead>
         <tbody>
           {users.map((user) => (
@@ -32,7 +34,7 @@ function UsersIndex() {
         </tbody>
       </table>
       <td>
-      <Link to="/users/new">Add New User</Link>
+      <Link className='add-new-user-link' to="/users/new">Add New User</Link>
       </td>
     </div>
   );

@@ -15,7 +15,7 @@ function Event({ event }) {
       <td className="event-favorite">{event.is_favorite}</td>
       <td className="event-user-name">{event.user_name}</td>
       <td>
-        <img className="event-image" src={event.image_url} alt={event.name} style={{ maxWidth: "100px" }} />
+        <img className="" src={event.image_url} alt={event.name} style={{ maxWidth: "100px" }} />
       </td>
       <td>
         <Link to={`/events/${event.id}`}>View</Link>

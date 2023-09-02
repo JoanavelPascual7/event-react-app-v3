@@ -1,0 +1,79 @@
+/* UsersIndex.css */
+
+.index-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 60px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+
+/* Center the .show-title element */
+body {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Make sure the container covers the entire viewport height */
+    margin: 0; /* Remove default body margin */
+  }
+  
+  /* Define the animation */
+  @keyframes zoom-in {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+  
+  /* Apply the animation to the element */
+  .show-title {
+    display: inline-block; /* Display on one line */
+    animation-name: zoom-in;
+    animation-delay: 0.5s;
+    animation-duration: 3.5s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    background-size: 1000px;
+    white-space: nowrap; /* Prevent line break */
+  }
+  
+  
+  
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  thead {
+    background-color: white;
+    color: #fff;
+  }
+  
+  th {
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .add-new-user-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .add-new-user-link:hover {
+    background-color: #0056b3;
+  }
+  

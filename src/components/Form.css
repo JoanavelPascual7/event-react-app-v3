@@ -1,0 +1,59 @@
+/* Form.css */
+.new-review-form {
+    font-family: "Times New Roman", Times, serif;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .new-review-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .new-review-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .new-review-form label {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .new-review-form input,
+  .new-review-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+  
+  .new-review-form input[type="number"] {
+    width: 80px;
+  }
+  
+  .new-review-form textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .new-review-form button {
+    padding: 10px;
+    background-color: #222;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+  }
+  
+  .new-review-form button:hover {
+    background-color: #444;
+  }
+  
