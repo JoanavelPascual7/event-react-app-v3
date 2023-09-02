@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import './UserEditForm.css'; 
 
 function UserEditForm() {
   const { id } = useParams();
@@ -42,7 +43,8 @@ function UserEditForm() {
       .put(`${process.env.REACT_APP_API_URL}/users/${id}`, formData)
       .then((response) => {
         console.log('User updated:', response.data);
-        // You can redirect or show a success message here
+        // Redirect to the home page
+        window.location.href = '/'; // Redirect to the home page
       })
       .catch((error) => {
         console.error('Error updating user:', error);
@@ -55,9 +57,9 @@ function UserEditForm() {
 
   return (
     <div>
-      <h2>Edit User</h2>
+      <h2 className='user-title'>Edit User</h2>
       <form onSubmit={handleSubmit}>
-        <label>
+        <label className='user-name'>
           User Name:
           <input
             type="text"
@@ -66,7 +68,7 @@ function UserEditForm() {
             onChange={handleChange}
           />
         </label>
-        <label>
+        <label className='user-admi'>
           Admin:
           <input
             type="text"
@@ -75,7 +77,7 @@ function UserEditForm() {
             onChange={handleChange}
           />
         </label>
-        <label>
+        <label className='user-verified'>
           Verified:
           <input
             type="text"
@@ -84,7 +86,7 @@ function UserEditForm() {
             onChange={handleChange}
           />
         </label>
-        <button type="submit">Update</button>
+        <button className="update-button" type="submit">Update</button>
       </form>
     </div>
   );
