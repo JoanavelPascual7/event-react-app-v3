@@ -1,22 +1,50 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../Images/Reviews.png';
-import '../CSS/NavBar.css'
+import Logo from '../Images/Reviews.png';
+import '../CSS/NavBar.css';
+import LoginModal from './LoginModal';
 
+function NavBar({ handleLogout, user, userId, isAdmin }) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-function Logo() {
-  return <img src={logo} alt="MetroHubLogo" />;
-}
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
 
-function NavBar() {
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <nav className="navbar">
-        <div id='logo-container'>
-      <Link to="/" id="MetroHubLogo" className='navbar-logo'>
-        <Logo/>
-      </Link>
+      <div id='logo-container'>
+        <Link to="/" id="MetroHubLogo" className='navbar-logo'>
+          <img src={Logo} alt="MetroHubLogo" />
+        </Link>
       </div>
+
+      
       <Link to="/users">Users</Link>
+      <div>
+
+
+      <div id='navbar-buttons'>
+
+        <div className="navbar-signup-link">
+        <Link id="navbar-signup"  to="/signup">
+          Sign Up
+        </Link>
+        </div>
+          <div className='Navbar-login-button-div'>
+        <button id="navbar-login" className="navbar-login-button" onClick={openModal}>
+          Login
+        </button>
+        </div>
+
+        </div>
+      </div>
+
+      {isModalOpen && <LoginModal openModal={closeModal} />}
     </nav>
   );
 }
