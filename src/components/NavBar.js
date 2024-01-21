@@ -11,9 +11,11 @@ function Logo() {
 function NavBar() {
   return (
     <nav className="navbar">
+        <div id='logo-container'>
       <Link to="/" id="MetroHubLogo" className='navbar-logo'>
         <Logo/>
       </Link>
+      </div>
       <Link to="/users">Users</Link>
     </nav>
   );
