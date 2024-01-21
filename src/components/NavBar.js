@@ -22,14 +22,11 @@ function NavBar({ handleLogout, user, userId, isAdmin }) {
           <img src={Logo} alt="MetroHubLogo" />
         </Link>
       </div>
-
-      
-      <Link to="/users">Users</Link>
-      <div>
+      {/* <Link to="/users">Users</Link> */}
+      <div id="navbar-links container">
 
 
       <div id='navbar-buttons'>
-
         <div className="navbar-signup-link">
         <Link id="navbar-signup"  to="/signup">
           Sign Up
@@ -40,8 +37,8 @@ function NavBar({ handleLogout, user, userId, isAdmin }) {
           Login
         </button>
         </div>
-
         </div>
+        
       </div>
 
       {isModalOpen && <LoginModal openModal={closeModal} />}

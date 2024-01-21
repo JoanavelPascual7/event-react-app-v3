@@ -23,7 +23,7 @@ function Index() {
   }, []);
 
   return (
-    <div className="index-container">
+    <div id='index-page' className="index-container">
       <h1 className='show-title'> List of Events </h1>
       <table>
         <thead>
