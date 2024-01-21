@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import './Event.css'
+import '../CSS/Event.css'
 
 function Event({ event }) {
   return (

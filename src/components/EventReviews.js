@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-import './EventReviews.css';
-import Review from './Review'; // Make sure to import the Review component
+import '../CSS/EventReviews.css'
+import Review from './Review'; 
 
 function EventReviews({ eventId }) {
   const [reviews, setReviews] = useState([]);
-  const [sortOrder, setSortOrder] = useState('desc'); // Default sorting order
+  const [sortOrder, setSortOrder] = useState('desc'); 
 
   const fetchReviews = () => {
     axios

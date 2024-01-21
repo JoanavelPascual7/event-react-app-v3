@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-import './User.css'
+import '../CSS/User.css'
 
 function User({ user, onDelete }) {
   const handleDelete = () => {

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './Form.css'
+import '../CSS/Form.css'
 
 function ReviewEditForm() {
   return (

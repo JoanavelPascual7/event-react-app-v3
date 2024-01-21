@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 
-import "./Form.css";
+import '../CSS/Form.css'
 
 function NewReviewForm() {
   const { id: eventIdFromUrl } = useParams(); // Get the event ID from the URL

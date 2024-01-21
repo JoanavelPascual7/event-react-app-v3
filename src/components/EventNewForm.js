@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-
-import "./EventNewForm.css"
-
+import '../CSS/EventNewForm.css'
 
 export default function EventNewForm() {
   const initialFormData = {

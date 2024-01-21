@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 
-import './EventDetail.css';
+
+import '../CSS/EventDetail.css'
 
 function EventDetail() {
   const { id } = useParams(); 

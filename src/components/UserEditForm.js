@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import './UserEditForm.css'; 
+
+import '../CSS/UserEditForm.css' 
 
 function UserEditForm() {
   const { id } = useParams();
