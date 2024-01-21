@@ -26,8 +26,8 @@
   background: none;
 }
 
-#logo:hover {
-  transform: scale(1.01); 
+.navbar-logo:hover {
+  transform: scale(1.009); 
 }
 
 .navbar a {
