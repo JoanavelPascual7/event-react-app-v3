@@ -23,6 +23,7 @@ import UserNew from './pages/UserNew';
 import ReviewsIndex from "./pages/ReviewsIndex";
 import ReviewsNew from './pages/ReviewsNew'; 
 import ReviewsShow from "./pages/ReviewsShow";
+import ProfilePage from "./pages/Profile";
 
 
 const API = process.env.REACT_APP_API_URL
@@ -105,6 +106,7 @@ function App() {
             <Route path="/events/:id/edit" element={<Edit />} />
             <Route path="/events/:id/reviews/new" element={<ReviewsNew />} />
             <Route path="/events/:id/reviews" element={<ReviewsIndex />} />
+            <Route path="/profile" element={<ProfilePage />} />
 
 
             <Route path="/reviews/:id" element={<ReviewsShow />} />

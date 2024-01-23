@@ -1,12 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 import { auth } from "../firebaseConfig";
-import "../CSS/LoginModal.css"
+import "../CSS/LoginModal.css";
+
 const LoginModal = ({ openModal }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loggedInUser, setLoggedInUser] = useState(null);
+
+  useEffect(() => {
+    const handleModalOpen = () => {
+      document.body.classList.add("modal-open");
+    };
+
+    const handleModalClose = () => {
+      document.body.classList.remove("modal-open");
+    };
+
+    if (openModal) {
+      handleModalOpen();
+    } else {
+      handleModalClose();
+    }
+
+    return () => {
+      handleModalClose(); // Cleanup on component unmount
+    };
+  }, [openModal]);
 
   const handleLogin = async () => {
     try {
@@ -29,7 +50,6 @@ const LoginModal = ({ openModal }) => {
       console.error("Login Error:", error);
     }
   };
-  
 
   const handleGoogleLogin = async () => {
     try {
@@ -44,7 +64,7 @@ const LoginModal = ({ openModal }) => {
 
   const handleLogout = async () => {
     try {
-      await signOut(auth).then(()=> window.location.reload());
+      await signOut(auth).then(() => window.location.reload());
       setLoggedInUser(null);
     } catch (error) {
       console.error("Logout Error:", error);
@@ -52,14 +72,13 @@ const LoginModal = ({ openModal }) => {
   };
 
   return (
-    <div className="modal-container">
+    <div className="modal-overlay">
       <div className="modal-content">
         <span id='close-container' className="close" onClick={openModal}>
           &times;
         </span>
         {loggedInUser ? (
           <div>
-            
             <div id="login-forum-container" className="login-forum-container">
               You are logged in as {loggedInUser.email}.
               <button
@@ -80,7 +99,6 @@ const LoginModal = ({ openModal }) => {
             <form className="form-container">
               <div id='login-input-container'>
                 <label className="username-label">
-                  {/* Email: */}
                   <input
                     className="username-input"
                     type="email"
@@ -90,7 +108,6 @@ const LoginModal = ({ openModal }) => {
                   />
                 </label>
                 <label className="password-login">
-                  {/* Password: */}
                   <input
                     className="password-input"
                     type="password"
@@ -98,7 +115,6 @@ const LoginModal = ({ openModal }) => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     onKeyPress={(e) => {
-                      // Check if Enter key is pressed
                       if (e.key === 'Enter') {
                         handleLogin();
                       }
