@@ -4,6 +4,8 @@ import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, signOu
 import { auth } from "../firebaseConfig";
 import "../CSS/LoginModal.css";
 
+import logo from "../Images/Reviews.png"
+
 const LoginModal = ({ openModal }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -94,6 +96,7 @@ const LoginModal = ({ openModal }) => {
         ) : (
           <div className="login-forum-container">
             <div className="login-h3-container">
+            <img id="login-logo" src={logo} alt="MetroHubLogo" />
               <h3 className="login-h3">Login</h3>
             </div>
             <form className="form-container">
@@ -102,7 +105,7 @@ const LoginModal = ({ openModal }) => {
                   <input
                     className="username-input"
                     type="email"
-                    placeholder="Enter your email"
+                    placeholder="Email"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                   />
@@ -111,7 +114,7 @@ const LoginModal = ({ openModal }) => {
                   <input
                     className="password-input"
                     type="password"
-                    placeholder="Enter your password"
+                    placeholder="Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     onKeyPress={(e) => {
