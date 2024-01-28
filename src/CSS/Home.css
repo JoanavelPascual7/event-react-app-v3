@@ -1,13 +1,15 @@
 .event-container {
-    position: relative;
-    height: 100vh;
-    background-size: 100% 100%;
-    background-position: center;
-    color: white;
-    text-align: center;
-    overflow: hidden !important;
-  }
-  
+  position: relative;
+  background-image: url('../nyc.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+
   .home-page-header {
     position: absolute;
     top: 50%;
@@ -18,6 +20,7 @@
     border-radius: 10px;
     width: 80%;
     max-width: 600px;
+    margin-top: 50px;
   }
   
   .home-page-title {
@@ -50,23 +53,8 @@
     background-color: #0056b3;
   }
   
+  #homepage-logo-icon{
+    width: 175px;
+    height: 155px;
 
-  @media screen and (max-width: 768px) {
-    .home-page-header {
-      width: 90%; 
-    }
-  
-    .home-page-title {
-      font-size: 2rem; 
-    }
-  
-    .home-page-description {
-      font-size: 1rem; 
-    }
-  
-    .home-page-link {
-      font-size: 1rem; 
-      padding: 10px 20px; 
-    }
   }
-  

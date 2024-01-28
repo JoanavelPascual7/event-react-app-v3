@@ -4,7 +4,7 @@ import Event from "../components/Events";
 import { Link } from 'react-router-dom';
 
 
-import "./Index.css"
+import "../CSS/Index.css"
 
 
 function Index() {
