@@ -74,12 +74,14 @@ export default function EventNewForm({ openModal, closeModal }) {
         <input
           type="number"
           name="rating"
+          placeholder="Raiting"
           value={formData.rating}
           onChange={handleInputChange}
         />
         <label className='comment'>Comment:</label>
         <textarea
           name="comment"
+          placeholder="Comment"
           value={formData.comment}
           onChange={handleInputChange}
         />

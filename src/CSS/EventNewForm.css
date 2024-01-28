@@ -33,4 +33,18 @@
   height: 100%;
 }
 
+/* close */
+.close {
+  cursor: pointer;
+  padding-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
 
+.close:hover {
+  color: #ffd700;
+}

@@ -1,0 +1,81 @@
+#new-page-events-link {
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    background-color: #007bff;
+    padding: 12px 24px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  #new-open-modal-button {
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    background-color: #007bff;
+    padding: 12px 24px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+    border: none;
+  }
+  
+  #new-event-container {
+    position: relative;
+    min-height: 100vh;
+    min-width: 1480px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-image: url('../nyc.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+  }
+  
+  #add-page-description {
+    color: white;
+    padding-bottom: 20px;
+  }
+  
+  #button-link-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding-bottom: 20px;
+  }
+  
+  /*CSS for the modal overlay */
+  
+  .modal-overlay {
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    min-width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    overflow: auto;
+  }
+  
+  .modal-open {
+    background-color: none;
+  }
+  
+  .modal-content {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    z-index: 1000;
+    width: 100%;
+    min-height: 100vh;
+    min-width: 100%;
+    color: white;
+  }
+  
