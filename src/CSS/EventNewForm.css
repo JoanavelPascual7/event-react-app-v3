@@ -1,53 +1,36 @@
-.EventNewForm {
-    font-family: 'Times New Roman', serif;
-    margin: auto;
-    padding: 50px;
-    background-color: #f8f8f8;
-    padding-top: 100px;
-    margin-top: 300px;
-    padding-bottom: 100px;
-  }
-  
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Increase the z-index value */
+}
 
-  .EventNewForm h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
- 
-  
-  .EventNewForm label {
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  .EventNewForm input,
-  .EventNewForm textarea {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #fff;
-  }
-  
-  .EventNewForm input[type="checkbox"] {
-    margin-right: 10px;
-  }
-  
-  .EventNewForm .add-event-button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 10px 20px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .EventNewForm .add-event-button:hover {
-    background-color: #0056b3;
-  }
-  
+.modal-open {
+  overflow: hidden; 
+}
+
+.modal-content {
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  z-index: 10000; 
+  width: 100%;
+  max-width: 420px;
+  min-height: 400px;
+}
+
+.modal-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+

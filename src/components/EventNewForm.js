@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import '../CSS/EventNewForm.css';
 
-import '../CSS/EventNewForm.css'
-
-export default function EventNewForm() {
+export default function EventNewForm({ openModal, closeModal }) {
   const initialFormData = {
     name: '',
     date: '',
@@ -33,6 +32,7 @@ export default function EventNewForm() {
       .then((response) => {
         console.log('New Event added:', response.data);
         setFormData(initialFormData);
+        closeModal();
       })
       .catch((error) => {
         console.error('API Error:', error);
@@ -40,8 +40,14 @@ export default function EventNewForm() {
   };
 
   return (
-    <div className="EventNewForm">
-      <h2>Add New Event</h2>
+    <div className={`modal-overlay ${openModal ? 'modal-open' : ''}`}>
+      <div className="modal-content">
+        <span className="close" onClick={closeModal}>
+          &times;
+        </span>
+        <div className="EventNewForm">
+          <h2>Add New Event</h2>
+          <form onSubmit={handleSubmit}></form>
       <form onSubmit={handleSubmit}>
         <label className='name'>Name:</label>
         <input
@@ -102,10 +108,13 @@ export default function EventNewForm() {
           value={formData.image_url}
           onChange={handleInputChange}
         />
- 
+            <button className="add-event-button" type="submit">
+              Add Event
+            </button>
+            </div>
+          </form>
         </div>
-        <button  className="add-event-button"  type="submit">Add Event</button>
-      </form>
+      </div>
     </div>
   );
 }
