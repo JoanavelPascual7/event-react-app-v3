@@ -4,7 +4,7 @@ import EventNewForm from "../components/EventNewForm";
 import "../CSS/NewPage.css";
 
 import nycImage from '../nyc.jpg';
-import logo from "../Images/Reviews.png"
+import logo from "../Images/Reviews.png";
 
 function New() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -18,7 +18,7 @@ function New() {
   };
 
   return (
-    <div className={`new-event-container ${isModalOpen ? 'modal-overlay modal-open' : ''}`}>
+    <div id="new-event-container">
       <div className="nyc-image-section">
         <img src={nycImage} alt="New York City" className="nyc-image" />
       </div>
@@ -28,20 +28,18 @@ function New() {
         </h1>
         <p id="add-page-description">
           <h3>Add an Event</h3>
-         Share your latest NYC experience on Metro Hub.
+          Share your latest NYC experience on Metro Hub.
         </p>
-        <div id="button-link-container">
-          <button id="new-open-modal-button" onClick={openModal}>
-            Add Event
-          </button>
-          {isModalOpen && (
-            <EventNewForm openModal={isModalOpen} closeModal={closeModal} />
-          )}
-          <Link id="new-page-events-link" to="/events">
-            View Events
-          </Link>
-        </div>
+        <Link id="new-page-events-link" to="/events">
+          View Events
+        </Link>
+        <button id="new-open-modal-button" onClick={openModal}>
+          Add Event
+        </button>
       </div>
+      {isModalOpen && (
+        <EventNewForm openModal={isModalOpen} closeModal={closeModal} />
+      )}
     </div>
   );
 }
