@@ -22,23 +22,24 @@ function New() {
       <div className="nyc-image-section">
         <img src={nycImage} alt="New York City" className="nyc-image" />
       </div>
-      <div className="home-page-header">
-        <h1 className="home-page-title">
-          <img id="homepage-logo-icon" src={logo} alt="MetroHubLogo" />
-        </h1>
-        <p id="add-page-description">
-          <h3>Add an Event</h3>
-          Share your latest NYC experience on Metro Hub.
-        </p>
-        <Link id="new-page-events-link" to="/events">
-          View Events
-        </Link>
-        <button id="new-open-modal-button" onClick={openModal}>
-          Add Event
-        </button>
-      </div>
-      {isModalOpen && (
+      {isModalOpen ? (
         <EventNewForm openModal={isModalOpen} closeModal={closeModal} />
+      ) : (
+        <div id="add-home-page-header">
+          <h1 className="home-page-title">
+            <img id="homepage-logo-icon" src={logo} alt="MetroHubLogo" />
+          </h1>
+          <p id="add-page-description">
+            <h3>Add an Event</h3>
+            Share your latest NYC experience on Metro Hub.
+          </p>
+          <Link id="new-page-events-link" to="/events">
+            View Events
+          </Link>
+          <button id="new-open-modal-button" onClick={openModal}>
+            Add Event
+          </button>
+        </div>
       )}
     </div>
   );

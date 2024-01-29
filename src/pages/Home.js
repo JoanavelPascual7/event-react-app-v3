@@ -11,7 +11,7 @@ export default function Home() {
         <div className="nyc-image-section">
     <img src={nycImage} alt="New York City" className="nyc-image" />
         </div>     
-      <div className="home-page-header">
+      <div id="home-page-header">
         <h1 className="home-page-title"><img id="homepage-logo-icon" src={logo} alt="MetroHubLogo" /></h1>
         <p className="home-page-description">
   <h3>Welcome</h3>

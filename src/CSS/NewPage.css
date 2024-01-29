@@ -23,21 +23,68 @@
     position: relative;
     min-height: 100vh;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px;
     background-image: url('../nyc.jpg');
     background-size: cover;
     background-position: center;
     color: white;
   }
   
+  #add-home-page-header {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    margin-top: 50px;
+  }
+
   #add-page-description {
     color: white;
     padding-bottom: 20px;
   }
   
-  #new-page-events-link{
+  #new-page-events-link {
     margin-right: 20px;
+    z-index: 1;
   }
+  
+  #new-open-modal-button {
+    margin-top: 20px;
+  }
+  
+  /* Updated styling for the modal overlay */
+  #modal-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+    margin-top: 50px;
+    z-index: 9999;
+  }
+  
+  #modal-content {
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    z-index: 1000;
+    width: 80%;
+    max-width: 420px;
+    max-height: 80vh;
+    overflow-y: hidden;
+    color: white;
+    margin-bottom: 170px;
+  }
+  
