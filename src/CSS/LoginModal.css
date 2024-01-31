@@ -1,191 +1,190 @@
 /* Updated CSS for the modal overlay */
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
 
-  }
-  
-  .modal-open {
-    overflow: hidden; /* Disable scrolling when modal is open */
-  }
-  
-  .modal-content {
-    background-color: rgba(0, 0, 0, 0.9);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-    z-index: 1000;
-    width: 100%;
-    max-width: 420px;
-    min-height: 400px;
-  }
-  
-  .modal-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  }
-  
+}
 
+.modal-open {
+  overflow: hidden; /* Disable scrolling when modal is open */
+}
 
-  #login-input-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    min-width: 275px;
-  }
-  
-  .username-label,
-  .password-login {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
-  }
-  
+.modal-content {
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  z-index: 1000;
+  width: 100%;
+  max-width: 420px;
+  min-height: 400px;
+}
+
+.modal-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
 
 
-  .username-input,
-  .password-input {
-    width: 100%;
-    padding: 0.5rem;
-    margin: 0.5rem 0;
-    border-radius: 5px;
-    border: 1px solid #545454;
-    background-color: rgba(169, 169, 169, 0.1); /* Translucent grayish background */
-    color: white;
-    font-size: 17px;
-  }
-  
-  
-  .logout-button {
-    margin-top: 20px;
-  }
-  
-  .google-btn {
-    width: 40px;
-    height: 40px;
-    background-color: black;
-    border-radius: 50%;
-    transition: background-color 0.3s, color 0.3s;
-    margin: 0.5rem 0;
-    position: relative;
-  }
-  
-  .google-btn:hover {
-    box-shadow: 0 0 6px #4285f4;
-  }
-  
-  .google-btn:active {
-    background: #1669f2;
-  }
-  
-  .google-icon-wrapper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 24px;
-    height: 24px;
-    background-color: rgba(169, 169, 169, 0.9);
-    background-image: url("../Images/googli-icon.png");
-    background-size: cover;
-    border-radius: 50%;
-  }
-  
-  .form-container {
-    width: 100%;
-    
-  }
-  
-  
-  
-  
-  .logout-button {
-    padding-top: 10px; 
-  }
-  
+
+#login-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 275px;
+}
+
+.username-label,
+.password-login {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
 
 
-  
-  .login-h3-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
- 
-  }
-  
-  .login-h3 {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2rem; 
-    padding-top: 25px;
-  }
 
-  #close-container {
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  .close {
-    cursor: pointer;
-    padding-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 20px;
-    font-size: 20px;
-    color: white;
-  }
-  
-  .close:hover {
-    color: #ffd700;
-  }
+.username-input,
+.password-input {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border-radius: 5px;
+  border: 1px solid #545454;
+  background-color: rgba(169, 169, 169, 0.1); /* Translucent grayish background */
+  color: white;
+  font-size: 17px;
+}
 
 
-  .button-container {
-    display: flex;
-    justify-content: space-between;
-    min-width: 275px;
-    padding-top: 40px;
-  }
-  
-  #login-button {
-    font-size: 1.0rem;
-    color: white;
-    text-decoration: none;
-    background-color: black;
-    padding: 5.5px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease-in-out;
-    border: 1px solid white;
-    font-weight: bold;
-    margin: 10px;
-    padding:10px;
-  }
-  
+.logout-button {
+  margin-top: 20px;
+}
 
-  #login-button:hover {
-    color: black;
-    background-color: white;
-    font-weight: bold;
-  }
+.google-btn {
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  border-radius: 50%;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 0.5rem 0;
+  position: relative;
+}
 
-  .google-btn {
-    /* Keep your existing styles for the Google button */
-  }
+.google-btn:hover {
+  box-shadow: 0 0 6px #4285f4;
+}
+
+.google-btn:active {
+  background: #1669f2;
+}
+
+.google-icon-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+  background-color: rgba(169, 169, 169, 0.9);
+  background-image: url("../Images/googli-icon.png");
+  background-size: cover;
+  border-radius: 50%;
+}
+
+.form-container {
+  width: 100%;
   
+}
 
-  #login-logo{
-    width: 145px;
-    height: 125px;
-  }
+
+
+
+.logout-button {
+  padding-top: 10px; 
+}
+
+
+
+
+.login-h3-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.login-h3 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem; 
+  padding-top: 25px;
+}
+
+#close-container {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close {
+  cursor: pointer;
+  padding-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.close:hover {
+  color: #ffd700;
+}
+
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  min-width: 275px;
+  padding-top: 40px;
+}
+
+#login-button {
+  font-size: 1.0rem;
+  color: white;
+  text-decoration: none;
+  background-color: black;
+  padding: 5.5px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+  border: 1px solid white;
+  font-weight: bold;
+  margin: 10px;
+  padding:10px;
+}
+
+
+#login-button:hover {
+  color: black;
+  background-color: white;
+  font-weight: bold;
+}
+
+.google-btn {
+  /* Keep your existing styles for the Google button */
+}
+
+
+#login-logo{
+  width: 145px;
+  height: 125px;
+}

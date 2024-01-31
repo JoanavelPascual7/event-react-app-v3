@@ -1,45 +1,44 @@
 .index-container {
-    margin: 190px;
-    margin-top: 100px;
-  }
-  
+  margin: 190px;
+  margin-top: 100px;
+}
+
 
 #index-page{
- margin: 20px; 
- padding-top: 500px;
- padding-bottom: 200px;
+margin: 20px; 
+padding-top: 500px;
+padding-bottom: 200px;
 }  
+.show-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.link-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff; 
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.link-button:hover {
+  background-color: #0056b3;
+}
+
+
+@media screen and (max-width: 768px) {
   .show-title {
-    font-size: 28px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 20px;
-    text-align: center;
+    font-size: 24px; 
   }
-  
+
   .link-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff; 
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+    padding: 8px 16px; 
   }
-  
-  .link-button:hover {
-    background-color: #0056b3;
-  }
-  
- 
-  @media screen and (max-width: 768px) {
-    .show-title {
-      font-size: 24px; 
-    }
-  
-    .link-button {
-      padding: 8px 16px; 
-    }
-  }
-  
+}
