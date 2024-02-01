@@ -59,18 +59,41 @@ export default function EventNewForm({ closeModal }) {
           </span>
           <h2>Add New Event</h2>
           <form onSubmit={handleSubmit}>
-          <label htmlFor="name" className="nameLabel">
-            Name:
+          <label htmlFor="user_name" className="userNameLabel">
+            {/* User Name: */}
           </label>
           <input
+            type="text"
+            id="user_name"
+            name="user_name"
+            placeholder='User Name'
+            value={formData.user_name}
+            onChange={handleInputChange}
+          />
+          <label htmlFor="name" className="nameLabel">
+            {/* Name: */}
+          </label>
+          <input
+            placeholder='Name:'
             type="text"
             id="name"
             name="name"
             value={formData.name}
             onChange={handleInputChange}
           />
+               <label htmlFor="location" className="locationLabel">
+            {/* Location: */}
+          </label>
+          <input
+            placeholder='Location'
+            type="text"
+            id="location"
+            name="location"
+            value={formData.location}
+            onChange={handleInputChange}
+          />
           <label htmlFor="date" className="dateLabel">
-            Date:
+            {/* Date: */}
           </label>
           <input
             type="date"
@@ -79,20 +102,12 @@ export default function EventNewForm({ closeModal }) {
             value={formData.date}
             onChange={handleInputChange}
           />
-          <label htmlFor="location" className="locationLabel">
-            Location:
-          </label>
-          <input
-            type="text"
-            id="location"
-            name="location"
-            value={formData.location}
-            onChange={handleInputChange}
-          />
+     
           <label htmlFor="rating" className="ratingLabel">
-            Rating:
+            {/* Rating: */}
           </label>
           <input
+            placeholder='Rating:'
             type="number"
             id="rating"
             name="rating"
@@ -100,45 +115,37 @@ export default function EventNewForm({ closeModal }) {
             onChange={handleInputChange}
           />
           <label htmlFor="comment" className="commentLabel">
-            Comment:
+            {/* Comment: */}
           </label>
           <textarea
+            placeholder='Comments'
             id="comment"
             name="comment"
             value={formData.comment}
             onChange={handleInputChange}
           />
           <div>
+            <label htmlFor="image_url" className="imageUrlLabel">
+              {/* Image URL: */}
+            </label>
+            <input
+            placeholder='Image URL'
+              type="text"
+              id="image_url"
+              name="image_url"
+              value={formData.image_url}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div>
+          <label htmlFor="is_favorite" id="favoriteLabel">
+              Favorite
+            </label>
             <input
               type="checkbox"
               id="is_favorite"
               name="is_favorite"
               checked={formData.is_favorite}
-              onChange={handleInputChange}
-            />
-            <label htmlFor="is_favorite" className="favoriteLabel">
-              Favorite
-            </label>
-          </div>
-          <label htmlFor="user_name" className="userNameLabel">
-            User Name:
-          </label>
-          <input
-            type="text"
-            id="user_name"
-            name="user_name"
-            value={formData.user_name}
-            onChange={handleInputChange}
-          />
-          <div>
-            <label htmlFor="image_url" className="imageUrlLabel">
-              Image URL:
-            </label>
-            <input
-              type="text"
-              id="image_url"
-              name="image_url"
-              value={formData.image_url}
               onChange={handleInputChange}
             />
           </div>

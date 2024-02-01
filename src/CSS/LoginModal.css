@@ -17,7 +17,7 @@
   overflow: hidden; /* Disable scrolling when modal is open */
 }
 
-.modal-content {
+#login-modal-content {
   background-color: rgba(0, 0, 0, 0.9);
   padding: 20px;
   border-radius: 8px;

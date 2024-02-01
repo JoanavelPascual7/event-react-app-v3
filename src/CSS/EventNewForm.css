@@ -1,52 +1,16 @@
-.EventNewForm {
-  font-family: 'Times New Roman', serif;
-  margin: auto;
-  padding: 50px;
-  background-color: #f8f8f8;
-  padding-top: 100px;
-  margin-top: 300px;
-  padding-bottom: 100px;
+/* Default styling for the modal content */
+.modal-content {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 300px;
 }
 
-
-.EventNewForm h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  text-align: center;
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .modal-content {
+    max-width: 80%;
+    padding: 15px;
+  }
 }
 
-
-
-.EventNewForm label {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.EventNewForm input,
-.EventNewForm textarea {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #fff;
-}
-
-.EventNewForm input[type="checkbox"] {
-  margin-right: 10px;
-}
-
-.EventNewForm .add-event-button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  padding: 10px 20px;
-  font-size: 18px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.EventNewForm .add-event-button:hover {
-  background-color: #0056b3;
-}

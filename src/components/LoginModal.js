@@ -75,7 +75,7 @@ const LoginModal = ({ openModal }) => {
 
   return (
     <div className="modal-overlay">
-      <div className="modal-content">
+      <div id="login-modal-content">
         <span id='close-container' className="close" onClick={openModal}>
           &times;
         </span>
